@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Review;
+use Illuminate\Support\Facades\DB;
+
 class ReviewsController extends Controller
 {
 
+
   public function index(){
+    $products = Review::all();
+    return response()->json($products);
   }
 
     /**

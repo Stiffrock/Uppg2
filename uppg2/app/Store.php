@@ -8,5 +8,7 @@ class Store extends Model
 {
   protected $fillable = ['product_id', 'store_id'];
 
-
+  public function products(){
+        return $this->belongsToMany('App\Product');
+      }
 }

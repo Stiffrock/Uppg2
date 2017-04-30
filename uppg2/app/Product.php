@@ -9,13 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 
-  protected $fillable = ['title', 'brand', 'price', 'image', 'description', 'stores'];
+  protected $fillable = ['title', 'brand', 'price', 'image', 'description'];
 
   public function stores(){
     return $this->belongsToMany('App\Store');
   }
   public function reviews(){
-    return $this->belongsToMany('App\Review');
+    return $this->hasMany('App\Review');
   }
 
 /*  public function getPrice(){
