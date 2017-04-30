@@ -11,6 +11,17 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 $app->get('/', function () use ($app) {
     return $app->version();
+
+$app->get('/products', 'ProductsController@index');
+$app->get('/products/{id}', 'ProductsController@show');
+$app->post('/products', 'ProductsController@create');
+$app->get('/stores', 'StoresController@index');
+$app->get('/reviews', 'ReviewsController@index');
+
+
+
 });
