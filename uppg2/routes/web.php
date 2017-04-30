@@ -14,14 +14,13 @@
 use Illuminate\Http\Request;
 
 $app->get('/', function () use ($app) {
+    "Waddup";
     return $app->version();
+  });
 
 $app->get('/products', 'ProductsController@index');
 $app->get('/products/{id}', 'ProductsController@show');
 $app->post('/products', 'ProductsController@create');
+$app->put('/products/{id}', 'ProductsController@update');
 $app->get('/stores', 'StoresController@index');
 $app->get('/reviews', 'ReviewsController@index');
-
-
-
-});
